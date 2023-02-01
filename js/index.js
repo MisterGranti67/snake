@@ -1,6 +1,5 @@
 var sheet = document.getElementById("canvas");
 
-
 function eventHandler(event) {
     var key = event.keyCode;
 
@@ -37,4 +36,49 @@ function draw() {
     edges();
     die();
     // Plus tard le score
+}
+
+function die() {
+
+}
+
+function move() {
+
+}
+
+function edges() {
+
+}
+
+function grow() {
+
+}
+
+class snake {
+    constructor(x, y, part){
+        this.xPos = x;
+        this.yPos = y;
+        this.type = part;
+    }
+
+    show(){
+        pen.fillStyle = this.type == 0 ? "#aaa" : "#ffffff";
+        pen.strokeStyle = "#eee"
+        pen.fillRect(this.xPos, this.yPos, 20, 20);
+        pen.strokeRect(this.xPos, this.yPos, 20, 20);
+    }
+}
+
+class pomme {
+    constructor() {
+        this.xPos = Math.floor(Math.random()*(width/20))*20;
+        this.yPos = Math.floor(Math.random()*(height/20))*20;
+    }
+
+    show() {
+        pen.fillStyle = "#999"
+        pen.strokeStyle = "#aaa"
+        pen.fillRect(this.xPos, this.yPos, 20, 20);
+        pen.strokeRect(this.xPos, this.yPos, 20, 20);
+    }
 }
