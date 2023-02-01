@@ -40,7 +40,7 @@ function draw() {
     mouse.show();
     for (var i = 0; i < body.length; ++i)
         body[i].show()
-    moveBy();
+    move();
     manger();
     bords();
     mort();
