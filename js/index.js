@@ -1,8 +1,12 @@
 var sheet = document.getElementById("canvas");
+var pen = sheet.getContext("2d");
+var width = sheet.width, height = sheet.height;
+window.addEventListener("keydown", eventHandler, false);
 var mouse = new food();
 var body = [];
 var xSpeed = 1, ySpeed = 0;
 var animLoop = setInterval(draw, 100);
+body.push(new bodyPart(width/2, height/2, 0));
 var score = 0;
 
 function eventHandler(event) {
