@@ -37,8 +37,8 @@ function draw() {
     for (var i = 0; i < body.length; ++i)
         body[i].show()
     moveBy();
-    eats();
-    edges();
+    manger();
+    bords();
     die();
     // Plus tard le score
 }
@@ -51,8 +51,15 @@ function move() {
 
 }
 
-function edges() {
-
+function bords() {
+    if(body[0].xPos < 0)
+        body[0].xPos = width - 20;
+    else if(body[0].xPos > width -20)
+        body[0].xPos = 0;
+    else if(body[0].yPos < 0)
+        body[0].yPos = height - 20;
+    else if(body[0].yPos > height -20)
+        body[0].yPos = 0;
 }
 
 function grow(){
