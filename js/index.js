@@ -55,8 +55,10 @@ function edges() {
 
 }
 
-function grow() {
-
+function grow(){
+    var x = body[0].xPos;
+    var y = body[0].yPos;
+    body.unshift(new bodyPart(x + xSpeed*20, y + ySpeed*20, 0));
 }
 
 class snake {
