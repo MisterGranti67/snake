@@ -1,4 +1,9 @@
 var sheet = document.getElementById("canvas");
+var mouse = new food();
+var body = [];
+var xSpeed = 1, ySpeed = 0;
+var animLoop = setInterval(draw, 100);
+var score = 0;
 
 function eventHandler(event) {
     var key = event.keyCode;
