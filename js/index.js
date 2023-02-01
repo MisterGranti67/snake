@@ -48,7 +48,12 @@ function die() {
 }
 
 function move() {
-
+    for(var i = body.length -1; i > 0; --i){
+        body[i].xPos = body[i -1].xPos;
+        body[i].yPos = body[i -1].yPos;
+    }
+    body[0].xPos += 20*xSpeed;
+    body[0].yPos += 20*ySpeed;
 }
 
 function bords() {
