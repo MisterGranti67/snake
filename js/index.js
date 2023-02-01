@@ -6,7 +6,7 @@ var mouse = new food();
 var body = [];
 var xSpeed = 1, ySpeed = 0;
 var animLoop = setInterval(draw, 100);
-body.push(new bodyPart(width/2, height/2, 0));
+body.push(new snake(width/2, height/2, 0));
 var score = 0;
 
 function eventHandler(event) {
@@ -83,12 +83,12 @@ function bords() {
 function grow(){
     var x = body[0].xPos;
     var y = body[0].yPos;
-    body.unshift(new bodyPart(x + xSpeed*20, y + ySpeed*20, 0));
+    body.unshift(new snake(x + xSpeed*20, y + ySpeed*20, 0));
 }
 
 function manger(){
     if(body[0].xPos == mouse.xPos && body[0].yPos == mouse.yPos){
-        mouse = new food();
+        mouse = new pomme();
         score++;
         grow();
         body[1].type = 1;
