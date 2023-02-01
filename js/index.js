@@ -24,3 +24,17 @@ function eventHandler(event) {
         pause = true;
     }
 }
+
+function draw() {
+    pen.fillStyle ="#000";
+    pen.fellRect(0, 0, width, height);
+
+    mouse.show();
+    for (var i = 0; i < body.length; ++i)
+        body[i].show()
+    moveBy();
+    eats();
+    edges();
+    die();
+    // Plus tard le score
+}
