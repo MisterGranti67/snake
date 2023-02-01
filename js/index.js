@@ -61,6 +61,15 @@ function grow(){
     body.unshift(new bodyPart(x + xSpeed*20, y + ySpeed*20, 0));
 }
 
+function manger(){
+    if(body[0].xPos == mouse.xPos && body[0].yPos == mouse.yPos){
+        mouse = new food();
+        score++;
+        grow();
+        body[1].type = 1;
+    }
+}
+
 class snake {
     constructor(x, y, part){
         this.xPos = x;
