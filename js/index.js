@@ -39,12 +39,21 @@ function draw() {
     moveBy();
     manger();
     bords();
-    die();
-    // Plus tard le score
+    mort();
+    document.getElementById("score").innerHTML = score;
 }
 
-function die() {
-
+function mort() {
+    for(var i = 0; i < body.length -1; ++i)
+    {
+        if(body[body.length -1].xPos == body[i].xPos && body[body.length -1].yPos == body[i].yPos)
+        {
+            console.log("over");
+            document.getElementById("over").innerHTML = "You Lose!";
+            clearInterval(animLoop);
+            break;
+        }
+    }
 }
 
 function move() {
